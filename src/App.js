@@ -1,23 +1,36 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import Lake from './Lake';
+import Hook from './Hook';
+import Checkbox from './Checkbox';
+import UseEffect from './UseEffect';
+import GitHubUser from './GitHubUser';
+import Reducer from './Reducer';
 
 function App() {
+  
+  const lakelist = [
+    "Echo Lake",
+    "Maud Lake",
+    "Cascade Lake"
+  ];
+
+  const lakeObjectList = [
+    {id: "1", name: "Echo", trailHead: "Echo"},
+    {id: "2", name: "Maud", trailHead: "Wrights"},
+    {id: "3", name: "Velma", trailHead: "Bayview"}
+  ];
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Lake lakes={lakeObjectList} />
+      <Hook />
+      <Checkbox />
+      <br/>
+      <UseEffect /> 
+      <GitHubUser login="RuFerdZ"/>
+      <br />
+      <Reducer />
     </div>
   );
 }
