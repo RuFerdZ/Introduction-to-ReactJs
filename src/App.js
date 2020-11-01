@@ -1,24 +1,21 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import MovieList from './Components/MovieList';
+import Nav from './Components/Nav';
+import {MovieProvider} from './Context-Api/MovieContext';
+import AddMovie from "./Components/AddMovie";
 
 function App() {
+  // to use movie context we have to wrap the components needing it with the provider
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    // as long as the compnents are wrapped around MovieProvide it can access its content
+    <MovieProvider>  
+      <div className="App">
+        <Nav />
+        <AddMovie />
+        <MovieList />
+      </div>
+    </MovieProvider>
   );
 }
 
