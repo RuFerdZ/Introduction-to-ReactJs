@@ -23,10 +23,10 @@ export default function AddMovie(){
     }
 
     return(
-        <form onSubmit={addMovie}>
-            <input type="text" name="name" required value={name} onChange={updateName}/>
-            <input type="text" name="price" required value={price} onChange={updatePrice} />
-            <button>Submit</button>
+        <form onSubmit={addMovie} className="AddMovie">
+            <input type="text" name="name" required value={name} onChange={updateName} placeholder="movie name" title="Movie title is empty" />
+            <input type="text" name="price" required value={price} onChange={updatePrice} placeholder="price{$}" pattern="[0-9]+" title="movie price format is invalid" />
+            <button>Add Movie</button>
         </form>
     );
 }
